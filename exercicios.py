@@ -1,25 +1,4 @@
-# 1) Observe o trecho de código abaixo: int INDICE = 13, SOMA = 0, K = 0;
-# Enquanto K < INDICE faça { K = K + 1; SOMA = SOMA + K; }
-# Imprimir(SOMA);
-# Ao final do processamento, qual será o valor da variável SOMA?
-
-# Código:
-
-# INDICE = 13
-# SOMA = 0
-# K = 0
-
-# while K < INDICE:
-#     K = K + 1
-#     SOMA = K + SOMA
-    
-# print(SOMA)
-
-# SOMA irá imprimir 91
-
-############################################################################# 
-
-# 2) Dado a sequência de Fibonacci, onde se inicia por 0 e 1 e o próximo valor sempre será a soma dos 2 valores anteriores (exemplo: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34...), escreva um programa na linguagem que desejar onde, informado um número, ele calcule a sequência de Fibonacci e retorne uma mensagem avisando se o número informado pertence ou não a sequência.
+# 1) Dado a sequência de Fibonacci, onde se inicia por 0 e 1 e o próximo valor sempre será a soma dos 2 valores anteriores (exemplo: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34...), escreva um programa na linguagem que desejar onde, informado um número, ele calcule a sequência de Fibonacci e retorne uma mensagem avisando se o número informado pertence ou não a sequência.
 
 # IMPORTANTE: Esse número pode ser informado através de qualquer entrada de sua preferência ou pode ser previamente definido no código;
 
@@ -42,98 +21,84 @@
 # else:
 #     print(f"O número {num} não pertence à sequência de Fibonacci.")
 
-#############################################################################
+###################################################################################
 
-# 3) Dado um vetor que guarda o valor de faturamento diário de uma distribuidora, faça um programa, na linguagem que desejar, que calcule e retorne:
-# • O menor valor de faturamento ocorrido em um dia do mês;
-# • O maior valor de faturamento ocorrido em um dia do mês;
-# • Número de dias no mês em que o valor de faturamento diário foi superior à média mensal.
+# 2) Escreva um programa que verifique, em uma string, a existência da letra ‘a’, seja maiúscula ou minúscula, além de informar a quantidade de vezes em que ela ocorre.
 
-# IMPORTANTE:
-# a) Usar o json ou xml disponível como fonte dos dados do faturamento mensal;
-# b) Podem existir dias sem faturamento, como nos finais de semana e feriados. Estes dias devem ser ignorados no cálculo da média;
+# IMPORTANTE: Essa string pode ser informada através de qualquer entrada de sua preferência ou pode ser previamente definida no código;
 
 # Código:
 
-# import json
+# def contar_as(texto):
+#     """Conta a quantidade de vezes que a letra 'a' aparece em um texto, 
+#     ignorando maiúsculas e minúsculas.
 
-# # Coloque o caminho do arquivo json
-# with open('C:/Users/Ivan/Desktop/Python Excercicio vaga/dados.json', 'r') as file:
-#     dados = json.load(file)
+#     Args:
+#         texto: A string a ser analisada.
 
-# # Filtrando os dias com faturamento maior que 0
-# faturamentos_validos = [dia['valor'] for dia in dados if dia['valor'] > 0]
-
-# # Calculando o menor e o maior valor de faturamento
-# menor_faturamento = min(faturamentos_validos)
-# maior_faturamento = max(faturamentos_validos)
-
-# media_faturamento = sum(faturamentos_validos) / len(faturamentos_validos)
-
-# dias_acima_da_media = sum(1 for dia in faturamentos_validos if dia > media_faturamento)
-
-# # Exibindo os resultados
-
-# print("Menor faturamento em um dia: ", menor_faturamento,"\nMaior faturamento em um dia: ", maior_faturamento,"\nDias com faturamento acima da média: ", dias_acima_da_media)
-
-# Resultado exibido: 
-# Menor faturamento em um dia:  373.7838 
-# Maior faturamento em um dia:  48924.2448
-# Dias com faturamento acima da média:  10
-
-#############################################################################
-
-# 4) Dado o valor de faturamento mensal de uma distribuidora, detalhado por estado:
-# • SP - R$67.836,43
-# • RJ - R$36.678,66
-# • MG - R$29.229,88
-# • ES - R$27.165,48
-# • Outros - R$19.849,53
-
-# Escreva um programa na linguagem que desejar onde calcule o percentual de representação que cada estado teve dentro do valor total mensal da distribuidora.
-
-# Código:
-
-# Valores de faturamento por estado (em reais)
-
-# faturamento_estados = {
-#     'SP': 67836.43,
-#     'RJ': 36678.66,
-#     'MG': 29229.88,
-#     'ES': 27165.48,
-#     'Outros': 19849.53
-# }
-
-# # Calculando o faturamento total
-# faturamento_total = sum(faturamento_estados.values())
-
-# # Calculando o percentual de cada estado
-# percentuais = {estado: (valor / faturamento_total) * 100 for estado, valor in faturamento_estados.items()}
-
-# # Exibindo os percentuais
-# print(percentuais) 
-
-# Valor impresso no terminal:
-# {'SP': 37.52845624346717, 'RJ': 20.291360952794975, 'MG': 16.170548370275327, 'ES': 15.02848141496807, 'Outros': 10.98115301849447}
-
-#############################################################################
-
-# 5) Escreva um programa que inverta os caracteres de um string.
-
-# IMPORTANTE:
-# a) Essa string pode ser informada através de qualquer entrada de sua preferência ou pode ser previamente definida no código;
-# b) Evite usar funções prontas, como, por exemplo, reverse;
-
-# Código:
-
-# def inverter_string(string):
-
-#   string_invertida = ""
-#   for i in range(len(string) - 1, -1, -1):
-#     string_invertida += string[i]
-#   return string_invertida
+#     Returns:
+#         int: O número de vezes que a letra 'a' aparece.
+#     """
+#     # Converter todo o texto para minúsculas para facilitar a contagem
+#     texto_minusculo = texto.lower()
+#     # Contar a ocorrência da letra 'a'
+#     contagem = texto_minusculo.count('a')
+#     return contagem
 
 # # Exemplo de uso:
-# string = input("Digite uma string: ")
-# resultado = inverter_string(string)
-# print("A string invertida é:", resultado)
+# texto = input("Digite um texto: ")
+# quantidade_as = contar_as(texto)
+
+# if quantidade_as > 0:
+#     print(f"A letra 'a' aparece {quantidade_as} vezes no texto.")
+# else:
+#     print("A letra 'a' não foi encontrada no texto.")
+
+###################################################################################
+
+# 3) Observe o trecho de código abaixo: int INDICE = 13, SOMA = 0, K = 0;
+# Enquanto K < INDICE faça { K = K + 1; SOMA = SOMA + K; }
+# Imprimir(SOMA);
+# Ao final do processamento, qual será o valor da variável SOMA?
+
+# Código:
+
+# INDICE = 12
+# SOMA = 0
+# K = 0
+
+# while K < INDICE:
+#     K = K + 1
+#     SOMA = K + SOMA
+    
+# print(SOMA)
+
+# SOMA irá imprimir 78
+
+###############################################################################
+
+# 4) Descubra a lógica e complete o próximo elemento:
+# a) 1, 3, 5, 7, ___
+# b) 2, 4, 8, 16, 32, 64, ____
+# c) 0, 1, 4, 9, 16, 25, 36, ____
+# d) 4, 16, 36, 64, ____
+# e) 1, 1, 2, 3, 5, 8, ____
+# f) 2,10, 12, 16, 17, 18, 19, ____
+
+# Resposta:
+
+# a) 1, 3, 5, 7 = 9
+# b) 2, 4, 8, 16, 32, 64 = 128
+# c) 0, 1, 4, 9, 16, 25, 36 = 49
+# d) 4, 16, 36, 64 = 100
+# e) 1, 1, 2, 3, 5, 8 = 13
+# f) 2, 10, 12, 16, 17, 18, 19 = 23
+
+###############################################################################
+
+# 5) Você está em uma sala com três interruptores, cada um conectado a uma lâmpada em salas diferentes. Você não pode ver as lâmpadas da sala em que está, mas pode ligar e desligar os interruptores quantas vezes quiser. Seu objetivo é descobrir qual interruptor controla qual lâmpada. Como você faria para descobrir, usando apenas duas idas até uma das salas das lâmpadas, qual interruptor controla cada lâmpada? 
+
+# Resposta:
+
+# Primeiro ligar um interruptor e esperar uns minutos até que a lâmpada esquente, depois desligar e ligar outro interruptor.
+# Na segunda visita verificar qual a lâmpada quente, qual a lâmpada acessa e qual a lâmpada fria que você descobrirá quais os interruptores para suas respectivas lâmpadas.
